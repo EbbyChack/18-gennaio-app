@@ -30,25 +30,22 @@ const Article = () => {
   }, [id]);
 
   return (
-    <div >
+    <div>
       {article ? (
         <div className="container my-3 ">
           <div className="row">
-            <div className="col-8 mx-auto">
-              <div className="card-container ">
-                <div className="card ">
-                  <img
-                    src={article.image_url}
-                    className="card-img-top"
-                    alt={article.title}
-                    style={{ objectFit: "cover" }}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{article.title}</h5>
-                    <p className="card-text ">{article.summary}</p>
-                    <button className="btn btn-light"><a href={article.url} target="_blank" >Read more...</a></button>
-                  </div>
-                </div>
+            <div className="col-9 mx-auto">
+              <div className="container">
+                <h2 className="mb-3">{article.title}</h2>
+                <img src={article.image_url} alt={article.title} className="w-100 mb-3"/>
+                
+                  <p className="card-text ">{article.summary}</p>
+                  <button className="btn btn-light">
+                    <a href={article.url} target="_blank" className=" text-dark"> 
+                      Read more...
+                    </a>
+                  </button>
+                
               </div>
             </div>
           </div>
